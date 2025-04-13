@@ -50,7 +50,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::pokemonGame.Properties.Resources._0025;
+            this.pictureBox2.Image = global::pokemonGame.Properties.Resources.sprite_pikachu;
             this.pictureBox2.Location = new System.Drawing.Point(507, 110);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(139, 137);

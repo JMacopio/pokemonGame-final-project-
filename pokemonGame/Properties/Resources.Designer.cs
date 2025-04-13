@@ -83,6 +83,16 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Antidote {
+            get {
+                object obj = ResourceManager.GetObject("Antidote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BattleBG {
             get {
                 object obj = ResourceManager.GetObject("BattleBG", resourceCulture);
@@ -96,6 +106,26 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap DownIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("DownIdlePlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Game_Boy_Advance___Pokemon_Emerald___Bag {
+            get {
+                object obj = ResourceManager.GetObject("Game Boy Advance - Pokemon Emerald - Bag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Game_Boy_Advance___Pokemon_Emerald___Bag1 {
+            get {
+                object obj = ResourceManager.GetObject("Game Boy Advance - Pokemon Emerald - Bag1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +153,44 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pikachu {
+            get {
+                object obj = ResourceManager.GetObject("pikachu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pikachu1 {
+            get {
+                object obj = ResourceManager.GetObject("pikachu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Pokémon_Ruby___Opening__mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("Pokémon_Ruby___Opening__mp3cut_net_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pokémon_starting_screen_mockup_aseprite_490x270_mouse_v0_w9zthjm1jita1 {
             get {
                 object obj = ResourceManager.GetObject("pokémon-starting-screen-mockup-aseprite-490x270-mouse-v0-w9zthjm1jita1", resourceCulture);
@@ -133,9 +201,49 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Potion {
+            get {
+                object obj = ResourceManager.GetObject("Potion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuickClaw {
+            get {
+                object obj = ResourceManager.GetObject("QuickClaw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuickClaw1 {
+            get {
+                object obj = ResourceManager.GetObject("QuickClaw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RightIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("RightIdlePlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sprite_pikachu {
+            get {
+                object obj = ResourceManager.GetObject("sprite-pikachu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

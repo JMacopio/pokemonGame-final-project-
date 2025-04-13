@@ -4,14 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+
 
 namespace pokemonGame
 {
     public partial class Form1: Form 
     {
+        WindowsMediaPlayer player;
         private PlayerMovement playerMovement;
         private BattleForm battleForm;
 
@@ -21,7 +25,9 @@ namespace pokemonGame
             playerMovement = new PlayerMovement(pictureBox1, this );
             AddWildPokemon();
             BattleStart();
-            
+            player = new WindowsMediaPlayer();
+            PlayAudio();
+            this.ControlBox = false;
         }
 
         private void keyDown(object sender, KeyEventArgs e)
@@ -51,6 +57,7 @@ namespace pokemonGame
             {
                 pictureBox1.BringToFront();
                 MessageBox.Show("Battle Start");
+                player.controls.stop();
                 Form2 form = new Form2();
                 form.Show();
                 this.Hide();
@@ -64,10 +71,10 @@ namespace pokemonGame
             }
 
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PlayAudio()
         {
-
-        }
+            player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame\\pokemonGame\\Resources\\Pokemon RubySapphireEmerald- Oldale Town (mp3cut.net).wav";
+            player.controls.play();
+        } 
     }
 }

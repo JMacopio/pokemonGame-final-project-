@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace pokemonGame
 {
@@ -22,6 +23,7 @@ namespace pokemonGame
             InitializeComponent();
             InitializeGame();
             InitializeDodgeTimer();
+            this.ControlBox = false;
         }
 
         private void InitializeGame()
@@ -111,7 +113,6 @@ namespace pokemonGame
         {
             currentPlayer.Skills(opponent);
             UpdateUI();
-            MessageBox.Show("Charizard uses flamethrower");
             if (opponent.Health <= 0)
             {
                 MessageBox.Show(currentPlayer.Name + "Wins!", "Game Over");
@@ -124,7 +125,9 @@ namespace pokemonGame
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form4 form = new Form4();
+            form.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

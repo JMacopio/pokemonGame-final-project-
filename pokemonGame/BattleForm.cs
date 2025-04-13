@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace pokemonGame
 {
-    class BattleForm
+    public class BattleForm
     {
         private Form1 mainforms;
         public string Name { get; set; }
@@ -47,7 +47,7 @@ namespace pokemonGame
 
         public void Attack(BattleForm opponent)
         {
-            // opponent.Health = Math.Max(0, opponent.Health - AttackPower);
+            
             // Apply random damage variation (e.g., ±20% of AttackPower)
             int variation = random.Next(-AttackPower / 5, AttackPower / 5);
             int damage = Math.Max(0, AttackPower + variation);
@@ -62,6 +62,7 @@ namespace pokemonGame
             int skillDamage = AttackPower + 30; // 15 extra damage
             opponent.Health = Math.Max(0, opponent.Health - skillDamage);
 
+            MessageBox.Show("Charizard uses flamethrower");
             MessageBox.Show($"{Name} used a SKILL ATTACK for {skillDamage} damage on {opponent.Name}!");
         }
     }
