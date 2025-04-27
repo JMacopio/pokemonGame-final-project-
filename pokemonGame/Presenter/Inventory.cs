@@ -12,7 +12,7 @@ using WMPLib;
 
 namespace pokemonGame
 {
-    public partial class Form4 : Form
+    public partial class Inventory : Form
     {
         double damage = 80;
         bool powerUpUsed = false; // So it can’t be clicked multiple times
@@ -20,20 +20,21 @@ namespace pokemonGame
         bool healthUp = false;
 
         private ToolTip toolTip;
-        public Form4()
+        public Inventory()
         {
             this.ControlBox = false;
             InitializeComponent();
 
             toolTip = new ToolTip();
             toolTip.SetToolTip(pictureBox1, "Attack +10%");
-            toolTip.SetToolTip(pictureBox2, "Remove status aliments");
-            toolTip.SetToolTip(pictureBox3, "Recover 10% hp");
+            toolTip.SetToolTip(pictureBox2, "Recover 10% hp");
+            toolTip.SetToolTip(pictureBox3, "Remove status aliments");
+            toolTip.SetToolTip(pictureBox4, "Ultra Ball");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            Battle form = new Battle();
             form.Show();
             this.Hide();
         }
@@ -62,6 +63,11 @@ namespace pokemonGame
                 pictureBox1.Visible = false; // Hide it after click
                 MessageBox.Show("Recovery Up! Health has been recoverd to " + health);
             }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

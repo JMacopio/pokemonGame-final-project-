@@ -1,6 +1,6 @@
 ﻿namespace pokemonGame
 {
-    partial class Form1
+    partial class LandingPage
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.conversationLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -65,25 +68,51 @@
             this.panel1.TabIndex = 2;
             this.panel1.Tag = "obstacle";
             // 
-            // Form1
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::pokemonGame.Properties.Resources.Idle;
+            this.pictureBox3.Location = new System.Drawing.Point(738, 103);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // conversationLabel
+            // 
+            this.conversationLabel.AutoSize = true;
+            this.conversationLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.conversationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conversationLabel.Location = new System.Drawing.Point(712, 84);
+            this.conversationLabel.Name = "conversationLabel";
+            this.conversationLabel.Size = new System.Drawing.Size(50, 16);
+            this.conversationLabel.TabIndex = 4;
+            this.conversationLabel.Text = "label1";
+            // 
+            // LandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pokemonGame.Properties.Resources.Game_Boy_Advance___Pokemon_FireRed_LeafGreen___Pattern_Bush;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(956, 450);
+            this.Controls.Add(this.conversationLabel);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "LandingPage";
             this.Text = "Landing Page";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,6 +121,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label conversationLabel;
     }
 }
 

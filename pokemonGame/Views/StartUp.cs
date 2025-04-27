@@ -13,10 +13,10 @@ using WMPLib;
 
 namespace pokemonGame
 {
-    public partial class Form3: Form
+    public partial class StartUp: Form
     {
         SoundPlayer player = new SoundPlayer(Properties.Resources.Pokémon_Ruby___Opening__mp3cut_net_);
-        public Form3()
+        public StartUp()
         {
             InitializeComponent();
             //this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -27,7 +27,7 @@ namespace pokemonGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            LandingPage form = new LandingPage();
             form.Show();
             this.Hide();
             player.Stop();

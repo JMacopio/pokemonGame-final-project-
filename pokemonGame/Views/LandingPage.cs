@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pokemonGame.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,27 +14,40 @@ using WMPLib;
 
 namespace pokemonGame
 {
-    public partial class Form1: Form 
+    public partial class LandingPage: Form, ILandingPage
     {
         WindowsMediaPlayer player;
         private PlayerMovement playerMovement;
         private BattleForm battleForm;
+        private bool npcSpeaking = false;
 
-        public Form1()
+        public LandingPage()
         {
             InitializeComponent();
             playerMovement = new PlayerMovement(pictureBox1, this );
             AddWildPokemon();
             BattleStart();
+            BattleStart2();
             player = new WindowsMediaPlayer();
             PlayAudio();
             this.ControlBox = false;
+
+            Timer timer = new Timer { Interval = 1000 };
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            conversationLabel.Visible = false;
         }
 
         private void keyDown(object sender, KeyEventArgs e)
         {
             playerMovement.KeyDowns(e);
-
+            
+            if (npcSpeaking && e.KeyCode == Keys.Enter)
+            {
+                conversationLabel.Text = "Let's fight";
+                npcSpeaking = false; 
+            }
         }
 
         private void keyUp(object sender, KeyEventArgs e) { }
@@ -49,6 +63,8 @@ namespace pokemonGame
                 Visible = false,
                 Tag = "WildPokemon"
             };
+            wildpokemon.Location = new Point(300, 200);
+            this.Controls.Add(wildpokemon);
         }
 
         public void BattleStart()
@@ -58,7 +74,7 @@ namespace pokemonGame
                 pictureBox1.BringToFront();
                 MessageBox.Show("Battle Start");
                 player.controls.stop();
-                Form2 form = new Form2();
+                Battle form = new Battle();
                 form.Show();
                 this.Hide();
             }
@@ -71,10 +87,50 @@ namespace pokemonGame
             }
 
         }
+
+        public void BattleStart2()
+        {
+            if (pictureBox1 != null && pictureBox2 != null && pictureBox1.Bounds.IntersectsWith(pictureBox2.Bounds))
+            {
+                pictureBox1.BringToFront();
+                MessageBox.Show("Battle Start");
+                player.controls.stop();
+                Battle form = new Battle();
+                form.Show();
+                this.Hide();
+            }
+            
+        }
         private void PlayAudio()
         {
             player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame\\pokemonGame\\Resources\\Pokemon RubySapphireEmerald- Oldale Town (mp3cut.net).wav";
             player.controls.play();
-        } 
+        }
+
+        void ILandingPage.AddWildPokemon()
+        {
+            AddWildPokemon();
+        }
+
+        void ILandingPage.PlayAudio()
+        {
+            PlayAudio();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Check for collision
+            if (pictureBox1.Bounds.IntersectsWith(pictureBox3.Bounds))
+            {
+                conversationLabel.Visible = true;
+                conversationLabel.Text = "Hey! Watch where you're going!!";
+                npcSpeaking = true; 
+            }
+            else if (!npcSpeaking)
+            {
+                conversationLabel.Text = "";
+            }
+        }
+
     }
 }

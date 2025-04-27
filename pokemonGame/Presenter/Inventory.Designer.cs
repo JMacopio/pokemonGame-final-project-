@@ -1,6 +1,6 @@
 ﻿namespace pokemonGame
 {
-    partial class Form4
+    partial class Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -105,13 +107,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form4
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::pokemonGame.Properties.Resources.UltraBall;
+            this.pictureBox4.Location = new System.Drawing.Point(580, 73);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pokemonGame.Properties.Resources.Game_Boy_Advance___Pokemon_Emerald___Bag1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox3);
@@ -119,11 +133,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Name = "Form4";
+            this.Name = "Inventory";
             this.Text = "Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +153,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

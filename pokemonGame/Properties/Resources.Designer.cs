@@ -103,6 +103,16 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Down {
+            get {
+                object obj = ResourceManager.GetObject("Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DownIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("DownIdlePlayer", resourceCulture);
@@ -143,6 +153,16 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Idle {
+            get {
+                object obj = ResourceManager.GetObject("Idle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LeftIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("LeftIdlePlayer", resourceCulture);
@@ -166,6 +186,28 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap pikachu1 {
             get {
                 object obj = ResourceManager.GetObject("pikachu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixel_art_inspired_by_Pokémon_title_screen_with_scenic_background__charming_creatures__and_retro_vibes_for_a_game_start_up_page {
+            get {
+                object obj = ResourceManager.GetObject("pixel art inspired by Pokémon title screen with scenic background, charming creat" +
+                        "ures, and retro vibes for a game start-up page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixel_art_inspired_by_Pokémon_title_screen_with_scenic_background__charming_creatures__and_retro_vibes_for_a_game_start_up_page_with__Press_Start__text_included {
+            get {
+                object obj = ResourceManager.GetObject("pixel art inspired by Pokémon title screen with scenic background, charming creat" +
+                        "ures, and retro vibes for a game start-up page with _Press Start_ text included", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -244,6 +286,16 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap sprite_pikachu {
             get {
                 object obj = ResourceManager.GetObject("sprite-pikachu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UltraBall {
+            get {
+                object obj = ResourceManager.GetObject("UltraBall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

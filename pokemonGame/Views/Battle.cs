@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pokemonGame.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +12,14 @@ using WMPLib;
 
 namespace pokemonGame
 {
-    public partial class Form2: Form
+    public partial class Battle: Form, IBattle
     {
-        private BattleForm player1 = new BattleForm("Player 1", 100, 30, 40);
-        private BattleForm player2 = new BattleForm("Player 2", 100, 20, 40);
+        private BattleForm player1 = BattleForm.CreatePlayer("Player 1", 100, 30, 40);
+        private BattleForm player2 = BattleForm.CreatePlayer("Player 2", 100, 20, 40);
         private BattleForm currentPlayer;
         private BattleForm opponent;
         private Timer DodgeTimer;
-        public Form2()
+        public Battle()
         {
             InitializeComponent();
             InitializeGame();
@@ -125,7 +126,7 @@ namespace pokemonGame
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form4 form = new Form4();
+            Inventory form = new Inventory();
             form.Show();
             this.Hide();
         }
@@ -133,9 +134,39 @@ namespace pokemonGame
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("The player chose to run");
-            Form1 form = new Form1();
+            LandingPage form = new LandingPage();
             form.Show();
             this.Hide();
+        }
+
+        void IBattle.InitializeGame()
+        {
+            InitializeGame();
+        }
+
+        void IBattle.UpdateUI()
+        {
+            UpdateUI();
+        }
+
+        public void SwapTurns()
+        {
+           
+        }
+
+        void IBattle.AutoDodge()
+        {
+            AutoDodge();
+        }
+
+        void IBattle.ComputerAttack()
+        {
+            ComputerAttack();
+        }
+
+        void IBattle.InitializeDodgeTimer()
+        {
+            InitializeDodgeTimer();
         }
     }
 }

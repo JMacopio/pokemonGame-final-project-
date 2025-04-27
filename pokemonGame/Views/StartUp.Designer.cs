@@ -1,6 +1,6 @@
 ﻿namespace pokemonGame
 {
-    partial class Form3
+    partial class StartUp
     {
         /// <summary>
         /// Required designer variable.
@@ -36,23 +36,23 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(297, 196);
+            this.button1.Location = new System.Drawing.Point(329, 254);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 23);
+            this.button1.Size = new System.Drawing.Size(216, 23);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form3
+            // StartUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::pokemonGame.Properties.Resources.pokémon_starting_screen_mockup_aseprite_490x270_mouse_v0_w9zthjm1jita1;
+            this.BackgroundImage = global::pokemonGame.Properties.Resources.pixel_art_inspired_by_Pokémon_title_screen_with_scenic_background__charming_creatures__and_retro_vibes_for_a_game_start_up_page_with__Press_Start__text_included;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
-            this.Name = "Form3";
+            this.Name = "StartUp";
             this.Text = "Start Up Screen";
             this.ResumeLayout(false);
 

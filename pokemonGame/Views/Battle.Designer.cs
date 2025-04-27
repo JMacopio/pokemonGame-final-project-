@@ -1,6 +1,6 @@
 ﻿namespace pokemonGame
 {
-    partial class Form2
+    partial class Battle
     {
         /// <summary>
         /// Required designer variable.

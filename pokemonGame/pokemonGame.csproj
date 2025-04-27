@@ -61,45 +61,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleForm.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Factory\BattleForm.cs" />
+    <Compile Include="Presenter\Movements.cs" />
+    <Compile Include="Views\IBattle.cs" />
+    <Compile Include="Views\ILandingPage.cs" />
+    <Compile Include="Views\LandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\LandingPage.Designer.cs">
+      <DependentUpon>LandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Views\Battle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Views\Battle.Designer.cs">
+      <DependentUpon>Battle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Views\StartUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Views\StartUp.Designer.cs">
+      <DependentUpon>StartUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Presenter\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Presenter\Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayerMovement.cs" />
+    <Compile Include="Model\PlayerMovement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\LandingPage.resx">
+      <DependentUpon>LandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Battle.resx">
+      <DependentUpon>Battle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Views\StartUp.resx">
+      <DependentUpon>StartUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Presenter\Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,6 +229,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sprite-pikachu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UltraBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page with _Press Start_ text included.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,16 +9,14 @@ namespace pokemonGame
 {
     public class BattleForm
     {
-        private Form1 mainforms;
+        private static Random random = new Random();
         public string Name { get; set; }
         public int Health { get; set; }
         public int AttackPower { get; set; }
         public int Skill { get; set; }
         public bool IsMissed { get; set; }
 
-        private static Random random = new Random();
-
-        public BattleForm(string name, int health, int attackPower, int skill)
+        private BattleForm(string name, int health, int attackPower, int skill)
         {
             Name = name;
             Health = health;
@@ -26,47 +24,26 @@ namespace pokemonGame
             Skill = skill;
         }
 
-        public BattleForm(bool miss)
-        {
-            IsMissed = miss;
-        }
-
-        public void missed(BattleForm opponent)
-        {
-            IsMissed = random.Next(0, 100) < 30;
-
-            if (IsMissed)
-            {
-                MessageBox.Show($"{Name} missed!");
-            }
-            else
-            {
-                opponent.Health += 0; // No effect since it's a miss
-            }
-        }
-
         public void Attack(BattleForm opponent)
         {
-            
-            // Apply random damage variation (e.g., ±20% of AttackPower)
             int variation = random.Next(-AttackPower / 5, AttackPower / 5);
             int damage = Math.Max(0, AttackPower + variation);
-
             opponent.Health = Math.Max(0, opponent.Health - damage);
-
             MessageBox.Show($"{Name} attacked {opponent.Name} for {damage} damage!");
         }
-        
+
         public void Skills(BattleForm opponent)
         {
-            int skillDamage = AttackPower + 30; // 15 extra damage
+            int skillDamage = AttackPower + 30;
             opponent.Health = Math.Max(0, opponent.Health - skillDamage);
-
-            MessageBox.Show("Charizard uses flamethrower");
             MessageBox.Show($"{Name} used a SKILL ATTACK for {skillDamage} damage on {opponent.Name}!");
+        }
+
+        // Factory Method for Creating New Players
+        public static BattleForm CreatePlayer(string name, int health, int attackPower, int skill)
+        {
+            return new BattleForm(name, health, attackPower, skill);
         }
     }
 
- 
-    
 }

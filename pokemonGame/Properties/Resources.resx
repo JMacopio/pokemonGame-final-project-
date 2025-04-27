@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UpIdlePlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpIdlePlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RightIdlePlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RightIdlePlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,17 +133,17 @@
   <data name="Game Boy Advance - Pokemon Emerald - Bag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Game Boy Advance - Pokemon Emerald - Bag1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QuickClaw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QuickClaw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pokemon RubySapphireEmerald- Oldale Town (mp3cut.net).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pokémon-starting-screen-mockup-aseprite-490x270-mouse-v0-w9zthjm1jita1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pokémon-starting-screen-mockup-aseprite-490x270-mouse-v0-w9zthjm1jita1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pokémon_Ruby___Opening__mp3cut_net_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pokémon Ruby - Opening (mp3cut.net).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pokémon-starting-screen-mockup-aseprite-490x270-mouse-v0-w9zthjm1jita1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pokémon-starting-screen-mockup-aseprite-490x270-mouse-v0-w9zthjm1jita1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="QuickClaw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuickClaw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Down.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Antidote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Antidote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +151,11 @@
   <data name="DownIdlePlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DownIdlePlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pikachu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pikachu1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LeftIdlePlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeftIdlePlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UpIdlePlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UpIdlePlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Game Boy Advance - Pokemon Emerald - Bag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Game Boy Advance - Pokemon Emerald - Bag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,16 +169,28 @@
   <data name="Potion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Potion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="QuickClaw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QuickClaw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="0006" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page with _Press Start_ text included" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page with _Press Start_ text included.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuickClaw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuickClaw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pokemon RubySapphireEmerald- Oldale Town (mp3cut.net).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="sprite-pikachu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sprite-pikachu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pikachu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pikachu1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UltraBall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UltraBall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
