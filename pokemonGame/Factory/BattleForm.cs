@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace pokemonGame
         public int AttackPower { get; set; }
         public int Skill { get; set; }
         public bool IsMissed { get; set; }
+        public Point Position { get; set; }
 
         private BattleForm(string name, int health, int attackPower, int skill)
         {

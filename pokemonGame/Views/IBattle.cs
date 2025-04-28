@@ -14,6 +14,10 @@ namespace pokemonGame.Views
         void AutoDodge();
         void ComputerAttack();
         void InitializeDodgeTimer();
+        void SaveState();
+        void RestoreState();
+        void CheckDefeat();
+
 
     }
 }

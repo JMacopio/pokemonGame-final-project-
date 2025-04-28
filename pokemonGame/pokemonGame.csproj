@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factory\BattleForm.cs" />
-    <Compile Include="Presenter\Movements.cs" />
+    <Compile Include="Model\PlayerState.cs" />
     <Compile Include="Views\IBattle.cs" />
     <Compile Include="Views\ILandingPage.cs" />
     <Compile Include="Views\LandingPage.cs">

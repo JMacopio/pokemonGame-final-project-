@@ -1,4 +1,5 @@
-﻿using pokemonGame.Views;
+﻿using pokemonGame.Model;
+using pokemonGame.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,12 +20,14 @@ namespace pokemonGame
         private BattleForm currentPlayer;
         private BattleForm opponent;
         private Timer DodgeTimer;
+        private PlayerState savedState;
         public Battle()
         {
             InitializeComponent();
             InitializeGame();
             InitializeDodgeTimer();
             this.ControlBox = false;
+            button5.Visible = false; // Hide the button
         }
 
         private void InitializeGame()
@@ -37,13 +40,21 @@ namespace pokemonGame
         private void button1_Click(object sender, EventArgs e)
         {
             currentPlayer.Attack(opponent);
+            ApplyDamage(currentPlayer.AttackPower);
             UpdateUI();
-            if(opponent.Health <= 0)
+            CheckDefeat();
+            if (opponent.Health <= 0)
             {
                 MessageBox.Show(currentPlayer.Name+ "Wins!", "Game Over");
                 InitializeGame();
                 return;
             }
+            if (currentPlayer.Health <= 0) // Trigger RestoreState if defeated
+            {
+                RestoreState();
+                return;
+            }
+
             AutoDodge();
             Swapturns();
         }
@@ -72,8 +83,23 @@ namespace pokemonGame
         {
             currentPlayer.Attack(opponent);
             //MessageBox.Show(currentPlayer.Name + " Attack!!");
+            UpdateUI();
+
+            if (opponent.Health <= 0)
+            {
+                MessageBox.Show(currentPlayer.Name + " Wins!", "Game Over");
+                InitializeGame();
+                return;
+            }
+
+            if (currentPlayer.Health <= 0) // Check if defeated
+            {
+                RestoreState();
+                return;
+            }
+
+            AutoDodge();
         }
-       
 
         private void UpdateUI()
         {
@@ -139,6 +165,95 @@ namespace pokemonGame
             this.Hide();
         }
 
+        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int baseChance = 100 - player2.Health;
+            baseChance += 10;
+
+            Random rand = new Random();
+            if (rand.Next(100) < baseChance)
+            {
+                label6.Text = "You caught the Pokémon!";
+                EndBattle();
+            }
+            else
+            {
+                label6.Text = "The Pokémon broke free!";
+                ComputerAttack();
+            }
+        }
+        private void ApplyDamage(int damage)
+        {
+            player2.Health -= damage;
+            // Prevent health from dropping below zero
+            player2.Health = Math.Max(player2.Health, 0);
+            UpdateButtonVisibility();
+        }
+
+        private void UpdateButtonVisibility()
+        {
+            if (player2.Health <= player2.Health * 0.5)
+            {
+                button5.Visible = true;
+            }
+            else
+            {
+                button5.Visible = false;
+            }
+        }
+        private void EndBattle()
+        {
+            MessageBox.Show("Battle Ended");
+            this.Close();
+        }
+        private void SaveState()
+        {
+            savedState = new PlayerState
+            {
+                Health = currentPlayer.Health,
+                Position = currentPlayer.Position // Assuming Position is a valid Point
+            };
+            MessageBox.Show("Game Saved!");
+        }
+
+        private void RestoreState()
+        {
+            if (savedState != null)
+            {
+                currentPlayer.Health = savedState.Health;
+                currentPlayer.Position = savedState.Position;
+                MessageBox.Show("You were defeated, returning to save point!");
+                UpdateUI();
+                // Update player's position visually if needed
+            }
+            else
+            {
+                MessageBox.Show("No save point found!");
+                InitializeGame();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SaveState();
+        }
+        private void CheckDefeat()
+        {
+            if (currentPlayer.Health <= 0)
+            {
+                RestoreState(); // Return to save point if defeated
+                return;
+            }
+
+            if (opponent.Health <= 0)
+            {
+                MessageBox.Show(currentPlayer.Name + " Wins!", "Game Over");
+                InitializeGame();
+                return;
+            }
+        }
+
         void IBattle.InitializeGame()
         {
             InitializeGame();
@@ -151,7 +266,7 @@ namespace pokemonGame
 
         public void SwapTurns()
         {
-           
+
         }
 
         void IBattle.AutoDodge()
@@ -167,6 +282,21 @@ namespace pokemonGame
         void IBattle.InitializeDodgeTimer()
         {
             InitializeDodgeTimer();
+        }
+
+        void IBattle.SaveState()
+        {
+            SaveState();
+        }
+
+        void IBattle.RestoreState()
+        {
+            RestoreState();
+        }
+
+        void IBattle.CheckDefeat()
+        {
+            CheckDefeat();
         }
     }
 }
