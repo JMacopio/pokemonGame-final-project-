@@ -62,8 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factory\BattleForm.cs" />
+    <Compile Include="Factory\SecondBattleForm.cs" />
+    <Compile Include="Views\Battle2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Battle2.Designer.cs">
+      <DependentUpon>Battle2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\PlayerState.cs" />
     <Compile Include="Views\IBattle.cs" />
+    <Compile Include="Views\IBattle2.cs" />
     <Compile Include="Views\ILandingPage.cs" />
     <Compile Include="Views\LandingPage.cs">
       <SubType>Form</SubType>
@@ -92,6 +100,9 @@
     <Compile Include="Model\PlayerMovement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\Battle2.resx">
+      <DependentUpon>Battle2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LandingPage.resx">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +255,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pixel art inspired by Pokémon title screen with scenic background, charming creatures, and retro vibes for a game start-up page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pika back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemey2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

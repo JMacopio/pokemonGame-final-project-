@@ -123,6 +123,16 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap enemey2 {
+            get {
+                object obj = ResourceManager.GetObject("enemey2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Game_Boy_Advance___Pokemon_Emerald___Bag {
             get {
                 object obj = ResourceManager.GetObject("Game Boy Advance - Pokemon Emerald - Bag", resourceCulture);
@@ -166,6 +176,16 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap LeftIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("LeftIdlePlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pika_back {
+            get {
+                object obj = ResourceManager.GetObject("pika back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
