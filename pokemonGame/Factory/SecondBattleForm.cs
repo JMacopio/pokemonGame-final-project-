@@ -38,7 +38,7 @@ namespace pokemonGame.Factory
         {
             int skillDamage = AttackPower + 30;
             opponent.Health = Math.Max(0, opponent.Health - skillDamage);
-            MessageBox.Show($"{Name} used a SKILL ATTACK for {skillDamage} damage on {opponent.Name}!");
+            MessageBox.Show($"{Name} used a Thunderbolt for {skillDamage} damage on {opponent.Name}!");
         }
 
         // Factory Method for Creating New Players
