@@ -11,6 +11,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace pokemonGame
 {
@@ -22,13 +23,16 @@ namespace pokemonGame
         private SecondBattleForm opponent2;
         private Timer DodgeTimer;
         private PlayerState savedState;
+        WindowsMediaPlayer player;
         public Battle2()
         {
             InitializeComponent();
             InitializeGame();
             InitializeDodgeTimer();
+            player = new WindowsMediaPlayer();
+            PlayAudio();
             this.ControlBox = false;
-            button5.Visible = false;
+            
         }
         private void InitializeGame()
         {
@@ -41,13 +45,13 @@ namespace pokemonGame
         private void button1_Click(object sender, EventArgs e)
         {
             currentPlayer1.Attack(opponent2);
-            ApplyDamage(currentPlayer1.AttackPower);
             UpdateUI();
             CheckDefeat();
             if (opponent2.Health <= 0)
             {
                 MessageBox.Show(currentPlayer1.Name + "Wins!", "Game Over");
                 InitializeGame();
+                EndBattle();
                 return;
             }
             if (currentPlayer1.Health <= 0) // Trigger RestoreState if defeated
@@ -89,6 +93,7 @@ namespace pokemonGame
             {
                 MessageBox.Show(currentPlayer1.Name + " Wins!", "Game Over");
                 InitializeGame();
+                EndBattle();
                 return;
             }
 
@@ -143,6 +148,7 @@ namespace pokemonGame
             {
                 MessageBox.Show(currentPlayer1.Name + "Wins!", "Game Over");
                 InitializeGame();
+                EndBattle();
                 return;
             }
             AutoDodge();
@@ -163,46 +169,13 @@ namespace pokemonGame
             form.Show();
             this.Hide();
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            int baseChance = 100 - player2.Health;
-            baseChance += 10;
-
-            Random rand = new Random();
-            if (rand.Next(100) < baseChance)
-            {
-                label6.Text = "You caught the Pokémon!";
-                EndBattle();
-            }
-            else
-            {
-                label6.Text = "The Pokémon broke free!";
-                ComputerAttack();
-            }
-        }
-        private void ApplyDamage(int damage)
-        {
-            player2.Health -= damage;
-            // Prevent health from dropping below zero
-            player2.Health = Math.Max(player2.Health, 0);
-            UpdateButtonVisibility();
-        }
-        private void UpdateButtonVisibility()
-        {
-            if (player2.Health <= player2.Health * 0.5)
-            {
-                button5.Visible = true;
-            }
-            else
-            {
-                button5.Visible = false;
-            }
-        }
         private void EndBattle()
         {
             MessageBox.Show("Battle Ended");
             this.Close();
+            LandingPage form = new LandingPage();
+            form.Show();
+            player.controls.stop();
         }
         private void SaveState()
         {
@@ -249,6 +222,11 @@ namespace pokemonGame
                 InitializeGame();
                 return;
             }
+        }
+        private void PlayAudio()
+        {
+            player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame v2\\pokemonGame\\Resources\\Pokémon Ruby, Sapphire & Emerald - Trainer Battle Music (HQ) (mp3cut.net).wav";
+            player.controls.play();
         }
 
         void IBattle2.InitializeGame()

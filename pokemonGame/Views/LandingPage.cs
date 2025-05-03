@@ -27,7 +27,6 @@ namespace pokemonGame
             playerMovement = new PlayerMovement(pictureBox1, this );
             AddWildPokemon();
             BattleStart();
-            BattleStart2();
             player = new WindowsMediaPlayer();
             PlayAudio();
             this.ControlBox = false;
@@ -45,8 +44,18 @@ namespace pokemonGame
             
             if (npcSpeaking && e.KeyCode == Keys.Enter)
             {
-                conversationLabel.Text = "Let's fight";
-                npcSpeaking = false; 
+                conversationLabel.Text = "Hey! Watch where you're going!!";
+                npcSpeaking = false;
+                Timer transitionTimer = new Timer { Interval = 1000 }; // 1 second delay
+                transitionTimer.Tick += (senderTimer, args) =>
+                {
+                    transitionTimer.Stop();
+                    Battle2 newForm = new Battle2();
+                    newForm.Show();
+                    this.Hide();
+                };
+                transitionTimer.Start();
+
             }
         }
 
@@ -88,19 +97,6 @@ namespace pokemonGame
 
         }
 
-        public void BattleStart2()
-        {
-            if (pictureBox1 != null && pictureBox2 != null && pictureBox1.Bounds.IntersectsWith(pictureBox2.Bounds))
-            {
-                pictureBox1.BringToFront();
-                MessageBox.Show("Battle Start");
-                player.controls.stop();
-                Battle form = new Battle();
-                form.Show();
-                this.Hide();
-            }
-            
-        }
         private void PlayAudio()
         {
             player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame\\pokemonGame\\Resources\\Pokemon RubySapphireEmerald- Oldale Town (mp3cut.net).wav";
@@ -123,7 +119,7 @@ namespace pokemonGame
             if (pictureBox1.Bounds.IntersectsWith(pictureBox3.Bounds))
             {
                 conversationLabel.Visible = true;
-                conversationLabel.Text = "Hey! Watch where you're going!!";
+                conversationLabel.Text = "Let's fight";
                 npcSpeaking = true; 
             }
             else if (!npcSpeaking)

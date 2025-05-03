@@ -262,5 +262,8 @@
   <ItemGroup>
     <None Include="Resources\enemey2.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokémon Ruby, Sapphire &amp; Emerald - Trainer Battle Music %28HQ%29 %28mp3cut.net%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

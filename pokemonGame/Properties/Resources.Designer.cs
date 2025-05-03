@@ -244,6 +244,15 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Pokémon_Ruby__Sapphire___Emerald___Trainer_Battle_Music__HQ___mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("Pokémon_Ruby__Sapphire___Emerald___Trainer_Battle_Music__HQ___mp3cut_net_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_ {
             get {
                 return ResourceManager.GetStream("Pokemon_RubySapphireEmerald__Oldale_Town__mp3cut_net_", resourceCulture);

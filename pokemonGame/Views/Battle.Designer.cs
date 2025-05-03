@@ -44,8 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,16 +188,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(354, 201);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "label6";
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(12, 12);
@@ -207,6 +197,16 @@
             this.button6.Text = "SaveState";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(354, 201);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "label6";
             // 
             // Battle
             // 
@@ -257,7 +257,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label6;
     }
 }

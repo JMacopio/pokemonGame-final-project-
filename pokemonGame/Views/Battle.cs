@@ -21,11 +21,14 @@ namespace pokemonGame
         private BattleForm opponent;
         private Timer DodgeTimer;
         private PlayerState savedState;
+        WindowsMediaPlayer player;
         public Battle()
         {
             InitializeComponent();
             InitializeGame();
             InitializeDodgeTimer();
+            player = new WindowsMediaPlayer();
+            PlayAudio();
             this.ControlBox = false;
             button5.Visible = false; // Hide the button
         }
@@ -74,6 +77,7 @@ namespace pokemonGame
                 {
                     MessageBox.Show(currentPlayer.Name + "Wins!");
                     InitializeGame();
+                    EndBattle();
                     return;
                 }
                 AutoDodge();
@@ -144,6 +148,7 @@ namespace pokemonGame
             {
                 MessageBox.Show(currentPlayer.Name + "Wins!", "Game Over");
                 InitializeGame();
+                EndBattle();
                 return;
             }
             AutoDodge();
@@ -196,16 +201,21 @@ namespace pokemonGame
             if (player2.Health <= player2.Health * 0.5)
             {
                 button5.Visible = true;
+                label6.Visible = true;
             }
             else
             {
                 button5.Visible = false;
+                label6.Visible = false;
             }
         }
         private void EndBattle()
         {
             MessageBox.Show("Battle Ended");
             this.Close();
+            LandingPage form = new LandingPage();
+            form.Show();
+            player.controls.stop();
         }
         private void SaveState()
         {
@@ -252,6 +262,11 @@ namespace pokemonGame
                 InitializeGame();
                 return;
             }
+        }
+        private void PlayAudio()
+        {
+            player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame v2\\pokemonGame\\Resources\\Pokémon Ruby, Sapphire & Emerald - Trainer Battle Music (HQ) (mp3cut.net).wav";
+            player.controls.play();
         }
 
         void IBattle.InitializeGame()
