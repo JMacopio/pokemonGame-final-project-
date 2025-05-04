@@ -133,6 +133,16 @@ namespace pokemonGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flame {
+            get {
+                object obj = ResourceManager.GetObject("flame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Game_Boy_Advance___Pokemon_Emerald___Bag {
             get {
                 object obj = ResourceManager.GetObject("Game Boy Advance - Pokemon Emerald - Bag", resourceCulture);
@@ -176,6 +186,16 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap LeftIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("LeftIdlePlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lightning {
+            get {
+                object obj = ResourceManager.GetObject("lightning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -305,6 +325,16 @@ namespace pokemonGame.Properties {
         internal static System.Drawing.Bitmap RightIdlePlayer {
             get {
                 object obj = ResourceManager.GetObject("RightIdlePlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slash {
+            get {
+                object obj = ResourceManager.GetObject("slash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

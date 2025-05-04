@@ -265,5 +265,14 @@
   <ItemGroup>
     <None Include="Resources\Pokémon Ruby, Sapphire &amp; Emerald - Trainer Battle Music %28HQ%29 %28mp3cut.net%29.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flame.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slash.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

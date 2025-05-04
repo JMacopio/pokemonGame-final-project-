@@ -24,6 +24,7 @@ namespace pokemonGame
         private Timer DodgeTimer;
         private PlayerState savedState;
         WindowsMediaPlayer player;
+        private Timer attackEffectTimer;
         public Battle2()
         {
             InitializeComponent();
@@ -32,7 +33,9 @@ namespace pokemonGame
             player = new WindowsMediaPlayer();
             PlayAudio();
             this.ControlBox = false;
-            
+            attackEffectTimer = new Timer { Interval = 500 }; // 0.5-second effect duration
+            attackEffectTimer.Tick += AttackEffectTimer_Tick;
+
         }
         private void InitializeGame()
         {
@@ -45,6 +48,8 @@ namespace pokemonGame
         private void button1_Click(object sender, EventArgs e)
         {
             currentPlayer1.Attack(opponent2);
+            pictureBox2.Image = Properties.Resources.slash;
+            attackEffectTimer.Start();
             UpdateUI();
             CheckDefeat();
             if (opponent2.Health <= 0)
@@ -143,6 +148,8 @@ namespace pokemonGame
         private void button2_Click(object sender, EventArgs e)
         {
             currentPlayer1.Skills(opponent2);
+            pictureBox2.Image = Properties.Resources.lightning; // Change image to attack effect
+            attackEffectTimer.Start(); // Start timer to reset image after effect
             UpdateUI();
             if (opponent2.Health <= 0)
             {
@@ -227,6 +234,12 @@ namespace pokemonGame
         {
             player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame v2\\pokemonGame\\Resources\\Pokémon Ruby, Sapphire & Emerald - Trainer Battle Music (HQ) (mp3cut.net).wav";
             player.controls.play();
+        }
+        //Timer Event to Reset the Attack Effect
+        private void AttackEffectTimer_Tick(object sender, EventArgs e)
+        {
+            attackEffectTimer.Stop();
+            pictureBox2.Image = Properties.Resources.sprite_pikachu; // Reset to normal idle image
         }
 
         void IBattle2.InitializeGame()

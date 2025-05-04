@@ -22,6 +22,7 @@ namespace pokemonGame
         private Timer DodgeTimer;
         private PlayerState savedState;
         WindowsMediaPlayer player;
+        private Timer attackEffectTimer;
         public Battle()
         {
             InitializeComponent();
@@ -31,6 +32,9 @@ namespace pokemonGame
             PlayAudio();
             this.ControlBox = false;
             button5.Visible = false; // Hide the button
+            attackEffectTimer = new Timer { Interval = 500 }; // 0.5-second effect duration
+            attackEffectTimer.Tick += AttackEffectTimer_Tick;
+
         }
 
         private void InitializeGame()
@@ -44,12 +48,16 @@ namespace pokemonGame
         {
             currentPlayer.Attack(opponent);
             ApplyDamage(currentPlayer.AttackPower);
+            pictureBox2.Image = Properties.Resources.slash; // Change image to attack effect
+            attackEffectTimer.Start();
             UpdateUI();
             CheckDefeat();
             if (opponent.Health <= 0)
             {
                 MessageBox.Show(currentPlayer.Name+ "Wins!", "Game Over");
                 InitializeGame();
+                EndBattle();
+                player.controls.stop();
                 return;
             }
             if (currentPlayer.Health <= 0) // Trigger RestoreState if defeated
@@ -143,12 +151,18 @@ namespace pokemonGame
         private void button2_Click(object sender, EventArgs e)
         {
             currentPlayer.Skills(opponent);
+
+            // **Trigger Attack Effect**
+            pictureBox2.Image = Properties.Resources.flame; // Change image to attack effect
+            attackEffectTimer.Start(); // Start timer to reset image after effect
+
             UpdateUI();
             if (opponent.Health <= 0)
             {
                 MessageBox.Show(currentPlayer.Name + "Wins!", "Game Over");
                 InitializeGame();
                 EndBattle();
+                player.controls.stop();
                 return;
             }
             AutoDodge();
@@ -160,11 +174,13 @@ namespace pokemonGame
             Inventory form = new Inventory();
             form.Show();
             this.Hide();
+            player.controls.stop();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("The player chose to run");
+            player.controls.stop();
             LandingPage form = new LandingPage();
             form.Show();
             this.Hide();
@@ -263,6 +279,13 @@ namespace pokemonGame
                 return;
             }
         }
+        //Timer Event to Reset the Attack Effect
+        private void AttackEffectTimer_Tick(object sender, EventArgs e)
+        {
+            attackEffectTimer.Stop();
+            pictureBox2.Image = Properties.Resources.sprite_pikachu; // Reset to normal idle image
+        }
+
         private void PlayAudio()
         {
             player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame v2\\pokemonGame\\Resources\\Pokémon Ruby, Sapphire & Emerald - Trainer Battle Music (HQ) (mp3cut.net).wav";
