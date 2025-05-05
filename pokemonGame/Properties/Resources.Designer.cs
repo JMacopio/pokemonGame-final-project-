@@ -350,6 +350,15 @@ namespace pokemonGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream The_End___Pokémon_RubySapphireEmerald_Soundtrack__mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("The_End___Pokémon_RubySapphireEmerald_Soundtrack__mp3cut_net_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap UltraBall {

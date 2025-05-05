@@ -241,7 +241,7 @@ namespace pokemonGame
             attackEffectTimer.Stop();
             pictureBox2.Image = Properties.Resources.sprite_pikachu; // Reset to normal idle image
         }
-
+        
         void IBattle2.InitializeGame()
         {
             InitializeGame();

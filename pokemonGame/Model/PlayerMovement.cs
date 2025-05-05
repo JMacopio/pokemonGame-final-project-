@@ -15,8 +15,6 @@ namespace pokemonGame
         private LandingPage mainforms;
         public bool MoveUp, MoveRight, MoveLeft, MoveDown;
         public bool Wildpokemon;
-        
-
 
         public PlayerMovement(PictureBox player, LandingPage form)
         {
@@ -27,9 +25,9 @@ namespace pokemonGame
 
         public void KeyDowns(KeyEventArgs e)
         {
-            
-                switch (e.KeyCode)
-                {
+
+            switch (e.KeyCode)
+            {
                     case Keys.Up:
                     case Keys.W:
                         player.Top -= charspeed;
@@ -53,7 +51,7 @@ namespace pokemonGame
                         player.Left += charspeed;
                         player.Image = Properties.Resources.RightIdlePlayer;
                         break;
-                }
+            }
             
             mainforms.BattleStart();
             player.Refresh();
@@ -62,23 +60,5 @@ namespace pokemonGame
         {
 
         }
-
-
-
-        public void CollidePokemon(KeyEventArgs e, bool CollidingWithPokemon)
-        {
-            if (CollidingWithPokemon == true)
-            {
-                mainforms.BattleStart();
-                return;
-            }
-            else
-            {
-                player.Location = new Point(player.Top, player.Left);
-                MoveUp = MoveRight = MoveLeft = MoveDown = true;
-            }
-        }
-
-        
     }
 }

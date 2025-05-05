@@ -24,7 +24,7 @@ namespace pokemonGame
         public LandingPage()
         {
             InitializeComponent();
-            playerMovement = new PlayerMovement(pictureBox1, this );
+            playerMovement = new PlayerMovement(pictureBox1, this);
             AddWildPokemon();
             BattleStart();
             player = new WindowsMediaPlayer();
@@ -41,7 +41,7 @@ namespace pokemonGame
         private void keyDown(object sender, KeyEventArgs e)
         {
             playerMovement.KeyDowns(e);
-            
+
             if (npcSpeaking && e.KeyCode == Keys.Enter)
             {
                 conversationLabel.Text = "Hey! Watch where you're going!!";
@@ -127,6 +127,5 @@ namespace pokemonGame
                 conversationLabel.Text = "";
             }
         }
-
     }
 }

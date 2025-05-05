@@ -18,12 +18,15 @@ namespace pokemonGame
         bool powerUpUsed = false; // So it can’t be clicked multiple times
         double health = 80;
         bool healthUp = false;
+        WindowsMediaPlayer player;
 
         private ToolTip toolTip;
         public Inventory()
         {
             this.ControlBox = false;
             InitializeComponent();
+            player = new WindowsMediaPlayer();
+            PlayAudio();
 
             toolTip = new ToolTip();
             toolTip.SetToolTip(pictureBox1, "Attack +10%");
@@ -37,6 +40,7 @@ namespace pokemonGame
             Battle form = new Battle();
             form.Show();
             this.Hide();
+            player.controls.stop();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -46,7 +50,6 @@ namespace pokemonGame
                 damage *= 1.10; // Increase by 10%
                 powerUpUsed = true; // disable after one use
 
-                // Optional: give visual feedback
                 pictureBox1.Visible = false; // Hide it after click
                 MessageBox.Show("Power up! Damage increased to " + damage);
             }
@@ -59,8 +62,7 @@ namespace pokemonGame
                 health *= 1.10; // Increase by 10%
                 powerUpUsed = true; // disable after one use
 
-                // Optional: give visual feedback
-                pictureBox1.Visible = false; // Hide it after click
+                pictureBox2.Visible = false;
                 MessageBox.Show("Recovery Up! Health has been recoverd to " + health);
             }
         }
@@ -68,6 +70,12 @@ namespace pokemonGame
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ultra Ball has been equiped");
+        }
+
+        private void PlayAudio()
+        {
+            player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame\\pokemonGame\\Resources\\The End - Pokémon RubySapphireEmerald Soundtrack (mp3cut.net).wav";
+            player.controls.play();
         }
     }
 }

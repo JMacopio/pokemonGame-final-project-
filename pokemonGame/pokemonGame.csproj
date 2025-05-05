@@ -274,5 +274,8 @@
   <ItemGroup>
     <None Include="Resources\lightning.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The End - Pokémon RubySapphireEmerald Soundtrack %28mp3cut.net%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

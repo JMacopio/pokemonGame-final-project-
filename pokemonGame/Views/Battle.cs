@@ -274,7 +274,6 @@ namespace pokemonGame
 
             if (opponent.Health <= 0)
             {
-                MessageBox.Show(currentPlayer.Name + " Wins!", "Game Over");
                 InitializeGame();
                 return;
             }
