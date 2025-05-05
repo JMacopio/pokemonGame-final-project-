@@ -31,7 +31,7 @@ namespace pokemonGame
             player = new WindowsMediaPlayer();
             PlayAudio();
             this.ControlBox = false;
-            button5.Visible = false; // Hide the button
+            button5.Visible = false; 
             attackEffectTimer = new Timer { Interval = 500 }; // 0.5-second effect duration
             attackEffectTimer.Tick += AttackEffectTimer_Tick;
 

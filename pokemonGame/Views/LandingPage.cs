@@ -115,7 +115,6 @@ namespace pokemonGame
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Check for collision
             if (pictureBox1.Bounds.IntersectsWith(pictureBox3.Bounds))
             {
                 conversationLabel.Visible = true;
