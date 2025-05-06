@@ -11,7 +11,6 @@ namespace pokemonGame
     public class PlayerMovement
     {
         private PictureBox player;
-        private PictureBox wall;
         private int charspeed = 15;
         private List<PictureBox> walls;
         private LandingPage mainforms;
