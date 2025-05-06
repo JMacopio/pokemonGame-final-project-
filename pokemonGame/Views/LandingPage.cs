@@ -24,7 +24,7 @@ namespace pokemonGame
         public LandingPage()
         {
             InitializeComponent();
-            playerMovement = new PlayerMovement(pictureBox1, wall, this);
+            playerMovement = new PlayerMovement(pictureBox1, this);
             AddWildPokemon();
             BattleStart();
             player = new WindowsMediaPlayer();
@@ -50,6 +50,7 @@ namespace pokemonGame
                 transitionTimer.Tick += (senderTimer, args) =>
                 {
                     transitionTimer.Stop();
+                    player.controls.stop();
                     Battle2 newForm = new Battle2();
                     newForm.Show();
                     this.Hide();

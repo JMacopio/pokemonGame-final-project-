@@ -19,9 +19,7 @@ namespace pokemonGame
         public StartUp()
         {
             InitializeComponent();
-            //this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.ControlBox = false;
-
             bgmusic();
         }
 

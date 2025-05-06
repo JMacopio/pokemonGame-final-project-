@@ -167,6 +167,7 @@ namespace pokemonGame
             Inventory form = new Inventory();
             form.Show();
             this.Hide();
+            player.controls.stop();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -175,6 +176,7 @@ namespace pokemonGame
             LandingPage form = new LandingPage();
             form.Show();
             this.Hide();
+            player.controls.stop();
         }
         private void EndBattle()
         {
@@ -239,7 +241,7 @@ namespace pokemonGame
         private void AttackEffectTimer_Tick(object sender, EventArgs e)
         {
             attackEffectTimer.Stop();
-            pictureBox2.Image = Properties.Resources.sprite_pikachu; // Reset to normal idle image
+            pictureBox2.Image = Properties.Resources.enemey2; // Reset to normal idle image
         }
         
         void IBattle2.InitializeGame()

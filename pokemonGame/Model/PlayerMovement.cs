@@ -13,15 +13,24 @@ namespace pokemonGame
         private PictureBox player;
         private PictureBox wall;
         private int charspeed = 15;
+        private List<PictureBox> walls;
         private LandingPage mainforms;
         public bool MoveUp, MoveRight, MoveLeft, MoveDown;
         public bool Wildpokemon;
 
-        public PlayerMovement(PictureBox player,PictureBox wall, LandingPage form)
+        public PlayerMovement(PictureBox player, LandingPage form)
         {
             this.player = player;
-            this.wall = wall;
             this.mainforms = form;
+
+            walls = new List<PictureBox>();
+            foreach (Control control in form.Controls)
+            {
+                if (control is PictureBox && control.Tag?.ToString() == "wall")
+                {
+                    walls.Add((PictureBox)control);
+                }
+            }
         }
 
         public void KeyDowns(KeyEventArgs e)
@@ -56,12 +65,23 @@ namespace pokemonGame
             }
             //Collision Detection Before Moving
             var futureBounds = new Rectangle(newX, newY, player.Width, player.Height);
-            if (!futureBounds.IntersectsWith(wall.Bounds))
+            bool collidesWithWall = false;
+
+            foreach (PictureBox wall in walls)
+            {
+                if (futureBounds.IntersectsWith(wall.Bounds))
+                {
+                    collidesWithWall = true;
+                    break;
+                }
+            }
+
+            // **Move Only If There Is No Wall Collision**
+            if (!collidesWithWall)
             {
                 player.Left = newX;
                 player.Top = newY;
             }
-
             mainforms.BattleStart();
             player.Refresh();
         }

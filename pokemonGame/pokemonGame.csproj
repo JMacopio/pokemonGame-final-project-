@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Factory\BattleForm.cs" />
     <Compile Include="Factory\SecondBattleForm.cs" />
+    <Compile Include="Presenter\BattlePresenter.cs" />
+    <Compile Include="Presenter\SecondBattlePresenter.cs" />
     <Compile Include="Views\Battle2.cs">
       <SubType>Form</SubType>
     </Compile>

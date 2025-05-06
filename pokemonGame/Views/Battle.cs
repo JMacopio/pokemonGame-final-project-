@@ -184,6 +184,7 @@ namespace pokemonGame
             LandingPage form = new LandingPage();
             form.Show();
             this.Hide();
+            player.controls.stop();
         }
 
         
@@ -226,7 +227,7 @@ namespace pokemonGame
             }
         }
         private void EndBattle()
-        {
+        {   
             MessageBox.Show("Battle Ended");
             this.Close();
             LandingPage form = new LandingPage();
