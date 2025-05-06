@@ -75,7 +75,7 @@ namespace pokemonGame
                 }
             }
 
-            // **Move Only If There Is No Wall Collision**
+            //Move Only If There Is No Wall Collision
             if (!collidesWithWall)
             {
                 player.Left = newX;
