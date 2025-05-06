@@ -24,7 +24,7 @@ namespace pokemonGame
         public LandingPage()
         {
             InitializeComponent();
-            playerMovement = new PlayerMovement(pictureBox1, this);
+            playerMovement = new PlayerMovement(pictureBox1, wall, this);
             AddWildPokemon();
             BattleStart();
             player = new WindowsMediaPlayer();

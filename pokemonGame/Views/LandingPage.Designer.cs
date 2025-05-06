@@ -32,11 +32,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.conversationLabel = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.wall = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,14 +82,14 @@
             this.conversationLabel.TabIndex = 4;
             this.conversationLabel.Text = "label1";
             // 
-            // pictureBox4
+            // wall
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(94, 346);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(768, 102);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.wall.BackColor = System.Drawing.Color.Transparent;
+            this.wall.Location = new System.Drawing.Point(96, 347);
+            this.wall.Name = "wall";
+            this.wall.Size = new System.Drawing.Size(764, 99);
+            this.wall.TabIndex = 5;
+            this.wall.TabStop = false;
             // 
             // LandingPage
             // 
@@ -98,7 +98,7 @@
             this.BackgroundImage = global::pokemonGame.Properties.Resources.Game_Boy_Advance___Pokemon_FireRed_LeafGreen___Pattern_Bush;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(956, 450);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.wall);
             this.Controls.Add(this.conversationLabel);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -107,13 +107,12 @@
             this.KeyPreview = true;
             this.Name = "LandingPage";
             this.Text = "Landing Page";
-            
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +124,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label conversationLabel;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox wall;
     }
 }
 
