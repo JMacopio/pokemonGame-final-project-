@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace pokemonGame.Presenter
 {
-    internal class BattlePresenter
+    public class BattlePresenter
     {
         private IBattle view;
         private BattleForm player1;
