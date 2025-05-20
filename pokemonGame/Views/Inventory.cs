@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pokemonGame.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using WMPLib;
 
 namespace pokemonGame
 {
-    public partial class Inventory : Form
+    public partial class Inventory : Form, IInventory
     {
         double damage = 80;
         bool powerUpUsed = false; // So it can’t be clicked multiple times
@@ -77,5 +78,26 @@ namespace pokemonGame
             player.URL = "C:\\Users\\User\\source\\repos\\pokemonGame\\pokemonGame\\Resources\\The End - Pokémon RubySapphireEmerald Soundtrack (mp3cut.net).wav";
             player.controls.play();
         }
+
+        public void HideItem(string itemName)
+        {
+            
+        }
+
+        public void ShowMessage(string message)
+        {
+            
+        }
+
+        public void UpdateDamageDisplay(double newDamage)
+        {
+            
+        }
+
+        public void UpdateHealthDisplay(double newHealth)
+        {
+            
+        }
+
     }
 }

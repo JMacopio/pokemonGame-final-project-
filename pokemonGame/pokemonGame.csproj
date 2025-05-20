@@ -64,6 +64,7 @@
     <Compile Include="Factory\BattleForm.cs" />
     <Compile Include="Factory\SecondBattleForm.cs" />
     <Compile Include="Presenter\BattlePresenter.cs" />
+    <Compile Include="Presenter\InventoryPresenter.cs" />
     <Compile Include="Presenter\SecondBattlePresenter.cs" />
     <Compile Include="Views\Battle2.cs">
       <SubType>Form</SubType>
@@ -74,6 +75,7 @@
     <Compile Include="Model\PlayerState.cs" />
     <Compile Include="Views\IBattle.cs" />
     <Compile Include="Views\IBattle2.cs" />
+    <Compile Include="Views\IInventory.cs" />
     <Compile Include="Views\ILandingPage.cs" />
     <Compile Include="Views\LandingPage.cs">
       <SubType>Form</SubType>
@@ -93,10 +95,10 @@
     <Compile Include="Views\StartUp.Designer.cs">
       <DependentUpon>StartUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presenter\Inventory.cs">
+    <Compile Include="Views\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presenter\Inventory.Designer.cs">
+    <Compile Include="Views\Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\PlayerMovement.cs" />
@@ -114,7 +116,7 @@
     <EmbeddedResource Include="Views\StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presenter\Inventory.resx">
+    <EmbeddedResource Include="Views\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
