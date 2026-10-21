@@ -1,26 +1,116 @@
-# Pokémon Game – Final Project
+<div align="center">
 
-A Pokémon-inspired role-playing game built as the final project for an Object-Oriented Programming (OOP) subject. The game features a top-down overworld with player movement, wild Pokémon encounters, turn-based battles, an inventory system, and save/restore functionality.
+![Pokémon-Inspired RPG banner](docs/banner.png)
+
+# Pokémon Game: Final Project
+
+**A Pokémon-inspired RPG with an explorable overworld, turn-based battles, an inventory, and save/restore. Built in C# for an Object-Oriented Programming course.**
+
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![.NET Framework](https://img.shields.io/badge/.NET%20Framework-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Windows Forms](https://img.shields.io/badge/Windows%20Forms-0078D4?style=for-the-badge&logo=windows&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
+- [Controls](#controls)
+- [How to Play](#how-to-play)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Known Issues](#known-issues)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
+
+## Overview
+
+This game was my final project for the Object-Oriented Programming subject. The goal was to apply OOP principles (encapsulation, abstraction, separation of concerns) and design patterns in a project big enough to need them. You walk around a top-down map, run into wild Pokémon, and fight them in turn-based battles where you can attack, use skills, or dodge.
 
 ## Features
 
-- **Overworld Exploration** – Move the player character around a map with collision detection against walls.
-- **Wild Pokémon Encounters** – Trigger battles when the player walks into designated wild Pokémon areas.
-- **Turn-Based Battle System** – Engage in battles with attack, skill, and dodge mechanics.
-- **Inventory System** – Use power-ups to increase damage, recover health, and equip items.
-- **Save & Restore** – Save your game state and restore it if you are defeated in battle.
-- **Audio** – Background music and battle sound effects for an immersive experience.
+| Feature | What it does |
+| --- | --- |
+| **Overworld exploration** | Move your character around the map, with collision detection against walls |
+| **Wild encounters** | Walk into a wild Pokémon area to start a battle |
+| **Turn-based battles** | Attack, use skills, or dodge, with a computer-controlled opponent |
+| **Inventory** | Use power-ups to boost damage, recover health, and equip items |
+| **Save and restore** | Save your state during a battle and restore it if you get defeated |
+| **Audio** | Background music and battle sound effects |
 
-## Technologies Used
+## Screenshots
 
-- **C#** – Core programming language
-- **Windows Forms** – GUI framework
-- **.NET Framework** – Application runtime
-- **Windows Media Player** – Audio playback
+> Add your own gameplay captures to `docs/` and link them here. A good set is the overworld, a battle in progress, and the inventory screen.
+
+| Overworld | Battle | Inventory |
+| --- | --- | --- |
+| `docs/overworld.png` | `docs/battle.png` | `docs/inventory.png` |
+
+## Getting Started
+
+### Requirements
+
+- Windows (the game uses Windows Forms and Windows Media Player)
+- Visual Studio with the **.NET desktop development** workload
+
+### Run it
+
+```bash
+git clone https://github.com/JMacopio/pokemonGame-final-project-.git
+```
+
+1. Open `pokemonGame.sln` in Visual Studio.
+2. Build the solution with `Ctrl+Shift+B`.
+3. Run it with `F5`.
+
+> **Audio not playing?** Some audio files are loaded from absolute paths like `C:\Users\User\source\repos\...`. Update those paths in `LandingPage.cs` and `Battle.cs` to point to your local copy of the project. See [Known Issues](#known-issues).
+
+## Controls
+
+| Key | Action |
+| --- | --- |
+| `W` or `↑` | Move up |
+| `S` or `↓` | Move down |
+| `A` or `←` | Move left |
+| `D` or `→` | Move right |
+| `Enter` | Interact and advance dialogue |
+
+## How to Play
+
+1. **Start screen:** launch the game from the startup form.
+2. **Explore:** walk around the map. Walking into wild Pokémon or NPCs triggers events.
+3. **Battle:** you and the opponent take turns. Use skills for extra damage, dodge incoming attacks, or try to catch the Pokémon when its health is low.
+4. **Manage items:** open the inventory to boost damage, heal, or equip special balls.
+5. **Save:** save your progress during a battle. If you are defeated, restore your last saved state.
+
+## Architecture
+
+The project follows the **Model-View-Presenter (MVP)** pattern, with a **Factory** for creating battle entities.
+
+| Layer | Responsibility | Examples |
+| --- | --- | --- |
+| **Model** | Game data and state | `PlayerMovement`, `PlayerState` |
+| **View** | WinForms screens, UI only | `StartUp`, `LandingPage`, `Battle`, `Battle2`, `Inventory` |
+| **Presenter** | Game logic between model and view | `BattlePresenter`, `SecondBattlePresenter`, `InventoryPresenter`, `Movements` |
+| **Factory** | Creates battle entities | `BattleForm`, `SecondBattleForm` |
+
+### Key classes
+
+| Class | Description |
+| --- | --- |
+| `PlayerMovement` | Handles keyboard input, movement, and wall collision detection |
+| `PlayerState` | Stores player health and position for save and restore |
+| `BattleForm` | Factory-created battle entity with attack and skill methods |
+| `BattlePresenter` | Manages battle logic, turn order, and the computer opponent |
+| `InventoryPresenter` | Applies power-ups, recovers health, and equips items |
 
 ## Project Structure
-
-The project follows the **Model-View-Presenter (MVP)** architectural pattern:
 
 ```
 pokemonGame/
@@ -47,52 +137,24 @@ pokemonGame/
 └── pokemonGame.csproj
 ```
 
-### Key Classes
+## Known Issues
 
-| Class | Description |
-|-------|-------------|
-| `PlayerMovement` | Handles player keyboard input, movement, and wall collision detection |
-| `PlayerState` | Stores player health and position for save/restore functionality |
-| `BattleForm` | Factory-created battle entity with attack and skill methods |
-| `BattlePresenter` | Manages battle logic, turn order, and computer AI |
-| `InventoryPresenter` | Handles power-up application, health recovery, and item equipping |
+- **Hard-coded audio paths.** Audio loads from absolute `C:\Users\User\...` paths, so music and sound effects only work on the original machine until the paths are changed.
+- **Windows only.** Windows Forms and Windows Media Player tie the game to Windows.
 
-## How to Run
+## Roadmap
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/JMacopio/pokemonGame-final-project-.git
-   ```
-2. Open `pokemonGame.sln` in **Visual Studio**.
-3. Build the solution (Ctrl+Shift+B).
-4. Run the application (F5).
-
-> **Note:** The audio files reference absolute paths (`C:\Users\User\source\repos\...`). You may need to update these paths in `LandingPage.cs` and `Battle.cs` if the audio does not play.
-
-## Controls
-
-| Key | Action |
-|-----|--------|
-| `W` / `↑` | Move up |
-| `S` / `↓` | Move down |
-| `A` / `←` | Move left |
-| `D` / `→` | Move right |
-| `Enter` | Interact / advance dialogue |
-
-## Gameplay Overview
-
-1. **Start Screen** – Launch the game from the startup form.
-2. **Overworld** – Navigate the player character around the map. Walking into wild Pokémon or NPCs triggers events.
-3. **Battles** – Turn-based combat where you and the opponent take turns attacking. Use skills for extra damage or try to catch the Pokémon when its health is low.
-4. **Inventory** – Access items to boost damage, recover health, or equip special balls.
-5. **Save System** – Save your progress during battle. If defeated, you can restore to your last saved state.
+- [ ] Load audio from relative paths (for example, copy the audio files to the output folder and build the path from `Application.StartupPath`)
+- [ ] Add gameplay screenshots or a short GIF to this README
+- [ ] Add more wild Pokémon areas and battle forms
+- [ ] Add a release build so the game can be played without Visual Studio
 
 ## Credits
 
-- **Developer:** JMacopio
-- **Purpose:** Final project for Object-Oriented Programming subject
-- **Assets:** Pokémon-inspired sprites and audio used for educational purposes
+- **Developer:** [JMacopio](https://github.com/JMacopio)
+- **Purpose:** Final project for the Object-Oriented Programming subject
+- **Assets:** Pokémon-inspired sprites and audio, used for educational purposes
 
 ---
 
-*This project was created for educational purposes and is not affiliated with Nintendo or The Pokémon Company.*
+<sub>This project was created for educational purposes and is not affiliated with Nintendo or The Pokémon Company.</sub>
