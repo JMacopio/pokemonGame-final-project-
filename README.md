@@ -1,6 +1,6 @@
 <div align="center">
 
-![Pokémon-Inspired RPG banner](docs/banner.png)
+![Pokémon-Inspired RPG: a 3D battle scene with a wild encounter, HP boxes and the Attack, Skill, Dodge and Bag menu](banner.png)
 
 # Pokémon Game: Final Project
 
@@ -46,11 +46,11 @@ This game was my final project for the Object-Oriented Programming subject. The 
 
 ## Screenshots
 
-> Add your own gameplay captures to `docs/` and link them here. A good set is the overworld, a battle in progress, and the inventory screen.
+The banner at the top is illustrative artwork of the battle flow, not a capture from the game. Add real gameplay captures to `docs/` and swap them in below.
 
 | Overworld | Battle | Inventory |
 | --- | --- | --- |
-| `docs/overworld.png` | `docs/battle.png` | `docs/inventory.png` |
+| ![Overworld](docs/overworld.png) | ![Battle](docs/battle.png) | ![Inventory](docs/inventory.png) |
 
 ## Getting Started
 
@@ -145,7 +145,7 @@ pokemonGame/
 ## Roadmap
 
 - [ ] Load audio from relative paths (for example, copy the audio files to the output folder and build the path from `Application.StartupPath`)
-- [ ] Add gameplay screenshots or a short GIF to this README
+- [ ] Add real gameplay screenshots or a short GIF (the three image links above are waiting for `overworld.png`, `battle.png` and `inventory.png`)
 - [ ] Add more wild Pokémon areas and battle forms
 - [ ] Add a release build so the game can be played without Visual Studio
 
@@ -154,6 +154,7 @@ pokemonGame/
 - **Developer:** [JMacopio](https://github.com/JMacopio)
 - **Purpose:** Final project for the Object-Oriented Programming subject
 - **Assets:** Pokémon-inspired sprites and audio, used for educational purposes
+- **Banner artwork:** original 3D-rendered creatures made for this README (`docs/banner.png`)
 
 ---
 
